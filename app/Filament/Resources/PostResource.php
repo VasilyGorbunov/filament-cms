@@ -36,6 +36,9 @@ class PostResource extends Resource
                 Forms\Components\Checkbox::make('is_published'),
                 Forms\Components\Hidden::make('user_id')
                     ->dehydrateStateUsing(fn ($state) => Auth::id()),
+                Forms\Components\SpatieMediaLibraryFileUpload::make('image')
+                    ->image()
+                    ->imageEditor(),
             ]);
     }
 
